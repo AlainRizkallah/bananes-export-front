@@ -10,9 +10,19 @@
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.9.1",
+    "@emotion/cache": "^11.10.3",
+    "@emotion/react": "^11.10.0",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/icons-material": "^5.10.3",
+    "@mui/material": "^5.10.2",
+    "@prisma/client": "^4.2.1",
+    "babel-plugin-superjson-next": "^0.4.4",
     "next": "12.2.5",
+    "next-themes": "^0.2.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "super-json": "^2.2.0"
   },
   "devDependencies": {
     "@types/node": "18.7.13",
@@ -20,6 +30,7 @@
     "@types/react-dom": "18.0.6",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
+    "prisma": "^4.2.1",
     "typescript": "4.8.2"
   }
 }

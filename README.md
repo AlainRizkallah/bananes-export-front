@@ -36,18 +36,18 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Subject
 
->BananesExport est une entreprise d'exportation de bananes qui est en >pleine croissance et recrute fortement dans le monde entier. >Malheureusement les employés se plaignent de plus en plus de la >lourdeur du processus d’accueil et de fourniture de poste de travail.
+>BananesExport est une entreprise d'exportation de bananes qui est en pleine croissance et recrute fortement dans le monde entier. Malheureusement les employés se plaignent de plus en plus de la lourdeur du processus d’accueil et de fourniture de poste de travail.
 >
->BananesExport souhaiterait une expérience utilisateur interactive >innovante à travers un portail web et mobile en self service dans >lequel: 
+>BananesExport souhaiterait une expérience utilisateur interactive innovante à travers un portail web et mobile en self service dans lequel: 
 >
 >- un employé peut planifier le jour d'arrivée d’un nouvel employé 
->- un employé peut composer un poste de travail pour un nouvel >arrivant par rapport à son futur rôle dans l’entreprise avec un >aperçu du budget en temps réel 
+>- un employé peut composer un poste de travail pour un nouvel arrivant par rapport à son futur rôle dans l’entreprise avec un aperçu du budget en temps réel 
 >- un employé peut définir un rôle pour le nouvel arrivant: 
 >    - Commercial 
 >    - Trader 
 >    - Développeur 
 >
->- un employé peut composer un poste de travail pour un nouvel >arrivant par rapport à son futur rôle:  
+>- un employé peut composer un poste de travail pour un nouvel arrivant par rapport à son futur rôle:  
 >    - Ordinateur [1 maximum par personne]: 
 >        - ordinateur portable à 1800€, 
 >        - ordinateur fixe+écran  2200€, 
@@ -79,7 +79,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 >- Pour les développeurs qui collaborent entre eux régulièrement 
 >    - 3000€ maximum de budget 
 >
->BananesExport souhaiterait une expérience utilisateur fluide et >responsive qui ne permette pas de configuration incohérente tout en >permettant aux utilisateurs de visualiser au maximum leur futur >environnement de travail.
+>BananesExport souhaiterait une expérience utilisateur fluide et responsive qui ne permette pas de configuration incohérente tout en permettant aux utilisateurs de visualiser au maximum leur futur environnement de travail.
 >
 >### Contraintes techniques
 >
@@ -89,6 +89,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 >
 >### Enjeu Métier
 >
->La priorité est l'expérience Utilisateur la plus innovante possible >dans la composition du poste de travail et le respect des règles >métier.
+>La priorité est l'expérience Utilisateur la plus innovante possible dans la composition du poste de travail et le respect des règles métier.
 >
 >
