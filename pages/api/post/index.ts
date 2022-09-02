@@ -1,6 +1,6 @@
-import prisma from '../../../lib/prisma';
-import { getSession } from '@auth0/nextjs-auth0'
+import { getSession } from '@auth0/nextjs-auth0';
 import { NextApiRequest, NextApiResponse } from 'next';
+import prisma from '../../../lib/prisma';
 
 export default async function handle(req: NextApiRequest, res: NextApiResponse<any>) {
   const session = getSession(req, res)

@@ -1,9 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import { Avatar, Grid, Link as MUILink, Typography } from '@mui/material';
-import { useRouter } from 'next/router';
-import { Box, Button } from '@mui/material';
 import { useUser } from '@auth0/nextjs-auth0';
+import { Box } from '@mui/material';
+import { useRouter } from 'next/router';
+import React from 'react';
 
 const Header: React.FC = () => {
   const router = useRouter();

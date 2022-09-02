@@ -1,20 +1,19 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Menu from '@mui/material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 import { useUser } from '@auth0/nextjs-auth0';
-import { useTheme } from "next-themes";
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import Image from 'next/image'
-import Link from 'next/link';
-import { Avatar, Grid, IconButton, Link as MUILink, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Avatar, IconButton, Link as MUILink, Typography } from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Toolbar from '@mui/material/Toolbar';
+import Tooltip from '@mui/material/Tooltip';
+import { useTheme } from "next-themes";
+import Link from 'next/link';
+import * as React from 'react';
 
 const pages = ['posts', 'users'];
 

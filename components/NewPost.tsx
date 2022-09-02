@@ -1,10 +1,8 @@
 import { UserProfile } from "@auth0/nextjs-auth0";
-import { Button, Box, Grid, IconButton, Paper, Stack, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, useMediaQuery, useTheme, SelectChangeEvent, InputLabel, FormControl, Select, MenuItem, CircularProgress } from "@mui/material";
-import EditIcon from '@mui/icons-material/Edit';
 import DoneIcon from '@mui/icons-material/Done';
-import DeleteIcon from '@mui/icons-material/Delete';
-import React, { useEffect, useState } from "react";
+import { Box, CircularProgress, FormControl, Grid, IconButton, InputLabel, MenuItem, Paper, Select, SelectChangeEvent, Stack } from "@mui/material";
 import router from "next/router";
+import React, { useState } from "react";
 
 export type PostProps = {
     id: string;

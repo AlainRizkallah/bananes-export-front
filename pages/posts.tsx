@@ -1,18 +1,14 @@
+import { useUser } from '@auth0/nextjs-auth0'
+import AddIcon from '@mui/icons-material/Add'
+import { Box, Grid, IconButton, Stack } from '@mui/material'
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Layout from '../components/Layout'
-import Main from '../components/Main'
-import prisma from '../lib/prisma'
-import Post, { PostProps } from '../components/Post'
-import { useUser } from '@auth0/nextjs-auth0';
-import { Box, FormControl, Grid, IconButton, InputLabel, MenuItem, Paper, Select, SelectChangeEvent, Stack, TextField } from '@mui/material'
-import AddIcon from '@mui/icons-material/Add';
-import { useState } from 'react'
 import React from 'react'
+import Layout from '../components/Layout'
 import NewPost from '../components/NewPost'
+import Post, { PostProps } from '../components/Post'
 import { UserProps } from '../components/User'
+import prisma from '../lib/prisma'
 
 
 export const getServerSideProps: GetServerSideProps = async () => {
@@ -26,7 +22,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
       },
     },
   }); 
-  console.log('posts', posts)
   const available_users = await prisma.user.findMany({
     include: {
       employeeToUser : {}
@@ -35,7 +30,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
       employeeToUser: null
     }
   }); 
-  console.log('available_users', available_users)
   return { props: { posts: posts, available_users: available_users } };
 }
 
@@ -48,7 +42,7 @@ const Posts: NextPage<Props> = (props) => {
 
   const [newPost, setNewPost] = React.useState(false);
 
-  const { user, error, isLoading } = useUser();
+  const { user } = useUser();
 
   if(!user)
   return(

@@ -1,16 +1,16 @@
 import { UserProfile } from "@auth0/nextjs-auth0";
-import { Button, Box, Grid, IconButton, Paper, Stack, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, useMediaQuery, useTheme, Select, Checkbox, InputLabel, FormControl, MenuItem, SelectChangeEvent, Typography } from "@mui/material";
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
-import DoneIcon from '@mui/icons-material/Done';
-import React, { useEffect, useState } from "react";
-import router from "next/router";
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import ComputerIcon from '@mui/icons-material/Computer';
 import CallIcon from '@mui/icons-material/Call';
+import ComputerIcon from '@mui/icons-material/Computer';
+import DeleteIcon from '@mui/icons-material/Delete';
+import DoneIcon from '@mui/icons-material/Done';
+import EditIcon from '@mui/icons-material/Edit';
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import RemoveIcon from '@mui/icons-material/Remove';
+import { Box, Button, Checkbox, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, Grid, IconButton, InputLabel, MenuItem, Paper, Select, SelectChangeEvent, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
+import router from "next/router";
+import React, { useState } from "react";
 
 export type PostProps = {
     id: string;
@@ -114,7 +114,6 @@ var postTypes : any = {
         }).then(function(response) {
           return response.json();});
         router.reload();
-        console.log('resp',resp)
       } catch (error) {
         console.error(error);
       }
@@ -173,7 +172,6 @@ var postTypes : any = {
     const [personId, setPersonId] = React.useState(post.User_employee?.id);
     const [personName, setPersonName] = React.useState(post.User_employee?.name);
     const handlePersonIdChange = (event: SelectChangeEvent) => {
-      console.log(event.target.value)
       setPersonId(event.target.value);
     };    
 

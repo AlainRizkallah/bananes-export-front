@@ -1,19 +1,16 @@
+import { useUser } from '@auth0/nextjs-auth0'
+import DoneIcon from '@mui/icons-material/Done'
+import { Box, IconButton, Paper, Stack, TextField } from '@mui/material'
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Layout from '../components/Layout'
-import Main from '../components/Main'
-import { useUser } from '@auth0/nextjs-auth0';
-import prisma from '../lib/prisma'
-import User, { UserProps } from '../components/User'
-import { Box, IconButton, Paper, Stack, TextField } from '@mui/material'
-import React from 'react'
-import DoneIcon from '@mui/icons-material/Done';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import router from 'next/router'
+import React from 'react'
+import Layout from '../components/Layout'
+import User, { UserProps } from '../components/User'
+import prisma from '../lib/prisma'
 
 
 export const getServerSideProps: GetServerSideProps = async () => {
@@ -22,20 +19,16 @@ export const getServerSideProps: GetServerSideProps = async () => {
       employeeToUser : {}
     },
   }); 
-  console.log('log_1', users)
   return { props: { users: users } };
 }
 
-// TODO -> any to userprops
 type Props = {
   users: UserProps[] 
 }
  
 const Users: NextPage<Props> = (props) => {
 
-  
   const { user, error, isLoading } = useUser();
-
   const [newName, setNewName] = React.useState('');
   const [newEmail, setNewEmail] = React.useState('');
 
@@ -65,7 +58,6 @@ const Users: NextPage<Props> = (props) => {
       }).then(function(response) {
         return response.json();});
       router.reload();
-      console.log('resp',resp)
     } catch (error) {
       console.error(error);
     }
