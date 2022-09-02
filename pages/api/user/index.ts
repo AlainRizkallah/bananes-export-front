@@ -6,6 +6,17 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse<a
   const session = getSession(req, res)
   
   if(req.method === 'POST'){
+    const { newName, newEmail, value} = req.body;
+    if (!session) return { prisma }
+    const result = await prisma.user.create({
+      data: {
+        name: newName,   
+        email: newEmail,
+        ArrivalAt : value,
+      },
+    });
+    return res.json(result.id);
+
   }
   if(req.method === 'GET'){
     const users = await prisma.user.findMany();
