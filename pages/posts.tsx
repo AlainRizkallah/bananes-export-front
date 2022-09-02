@@ -22,7 +22,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         select: { name: true, email: true, id: true },
       },
       User_employee: {
-        select: { name: true, email: true, id: true },
+        select: { name: true, email: true, id: true, ArrivalAt: true },
       },
     },
   }); 

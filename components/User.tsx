@@ -6,6 +6,7 @@ export type UserProps = {
     email: string;
     createdAt: Date;
     updatedAt: Date;
+    ArrivalAt: Date;
     employeeToUser: {
       id: string;
       createdAt: Date;
@@ -23,6 +24,10 @@ export type UserProps = {
   };
   
   const User: React.FC<{ user: UserProps }> = ({ user }) => {
+    const today = new Date();
+    today.setHours(23, 59, 59, 998);
+    var options = { year: "numeric", month: 'long', day: 'numeric'} as const;
+    // const time_start = new Date(user.ArrivalAt).toLocaleString('fr-FR', options);
     return(
 
         <Box p={1} px={2} mt={1} component={Paper}> 
@@ -30,6 +35,7 @@ export type UserProps = {
         <Box>{user.name ? user.name : "no name"}</Box>
         <Box>{user.email ? user.email : "no email"}</Box>
         <Box>{user.employeeToUser ? postTypes[user.employeeToUser.postType] : "Non assigné"}</Box>
+        {user.ArrivalAt > today ? "Arrive le "+user.ArrivalAt.toLocaleString('fr-FR', options) : ""}
         </Stack>
         </Box>
     );

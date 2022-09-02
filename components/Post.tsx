@@ -16,7 +16,9 @@ export type PostProps = {
     id: string;
     postType: string;
     User_author: {name : string, email : string, id : string}
-    User_employee:  {name : string, email : string, id : string}
+    User_employee:  {
+      ArrivalAt: Date, name : string, email : string, id : string
+}
     pcType : string;
     screen : number;
     Phone : string;
@@ -193,8 +195,10 @@ var postTypes : any = {
     + (equip.ecran * nbScreen)
     + (equip.tel[phone]? equip.tel[phone] : 0)
     + (checked? equip.casque : 0)
-
     
+    const today = new Date();
+    today.setHours(23, 59, 59, 998);
+    var options = { year: "numeric", month: 'long', day: 'numeric'} as const;
 
     
     return(
@@ -292,7 +296,10 @@ var postTypes : any = {
         </div>
         :
         <div>
-        <Box mb={1}><Typography variant="h6">{post.User_employee ? post.User_employee.name : "Non assigné"}</Typography></Box>
+        <Box mb={1}>
+          <Typography variant="h6">{post.User_employee ? post.User_employee.name : "Non assigné"}</Typography> 
+          {(post.User_employee) ? (post.User_employee.ArrivalAt !== null ? "(Arrive le "+post.User_employee.ArrivalAt.toLocaleString('fr-FR', options)+')' : '') : ""} 
+        </Box>
         <Box display='flex' alignItems={'center'}><MailOutlineIcon/>{'. '}{post.User_employee ? post.User_employee.email : "Non assigné"}</Box>
         <Box display='flex' alignItems={'center'}><ComputerIcon/>{'. '}{!post.pcType ? "Pas de PC" : post.pcType==="portable" ? "PC portable"  : post.pcType==="fixe" ? "PC fixe" : ""}</Box>
         <Box>{post.screen ? "Nombre d'écran(s) : "+post.screen : "Pas d'écran(s)"}</Box>
