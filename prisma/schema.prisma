@@ -19,6 +19,10 @@ model Post {
   employee                        String?        @unique
   User_employee User?          @relation("author", fields: [employee], references: [id])
   User_author    User?          @relation("employee", fields: [author], references: [id])
+  pcType String?
+  screen Int?
+  Phone String ?
+  Headset Boolean ?
 }
 
 model User {
@@ -27,6 +31,7 @@ model User {
   email     String?  @unique
   createdAt DateTime @default(now()) @map(name: "created_at")
   updatedAt DateTime @updatedAt @map(name: "updated_at")
+  ArrivalAt DateTime?
   employeeToUser        Post?     @relation("author")
   authorToUser        Post[]    @relation("employee")
   @@map(name: "users")
