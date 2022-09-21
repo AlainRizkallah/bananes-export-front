@@ -209,10 +209,10 @@ const Post: React.FC<{ post: PostProps, user: UserProfile | undefined, available
                     {post.User_employee !== undefined ?
                       <MenuItem value={post.User_employee?.id}>{post.User_employee?.name}</MenuItem> : ""}
 
-                    {available_users?.map((user) => {
+                    {available_users?.map((user, value) => {
                       if (user.id)
                         return (
-                          <MenuItem value={user.id}>{user.name}</MenuItem>
+                          <MenuItem value={""+user.id}>{user.name}</MenuItem>
                         );
                     })}
 

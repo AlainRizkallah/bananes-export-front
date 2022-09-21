@@ -18,6 +18,8 @@ import * as React from 'react';
 const pages = ['posts', 'users'];
 
 const ResponsiveAppBar = () => {
+  const { theme, resolvedTheme, setTheme } = useTheme();
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -39,9 +41,6 @@ const ResponsiveAppBar = () => {
   const { user, error, isLoading } = useUser();
   // if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
-
-  const { theme, resolvedTheme, setTheme } = useTheme();
-
 
   return (
     <AppBar position="static">
@@ -122,7 +121,7 @@ const ResponsiveAppBar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Link href={"/"+page} passHref>
+              <Link key={page} href={"/"+page} passHref>
               <MUILink variant="body2" style={{ textDecoration: 'none' }}>
               <Button
                 key={page}
@@ -173,9 +172,10 @@ const ResponsiveAppBar = () => {
             <Typography>
               {user.name} 
             </Typography>
-            <small>
-            ({user.email}) 
-            </small>
+            
+            <Typography fontSize={15}>
+              {""+user.email} 
+            </Typography>
             </Box>
               
                 <MenuItem key={'setting'} onClick={handleCloseUserMenu}>
