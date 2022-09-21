@@ -70,7 +70,9 @@ const Posts: NextPage<Props> = (props) => {
         <Box sx={{ flexGrow: 1 }} mx={2}>
         <Grid container spacing={2}>
         {props.posts.map((post) => (
-              <Post post={post} user={user} available_users={props.available_users}/>
+          <div key={post.id}>
+            <Post post={post} user={user} available_users={props.available_users}/>
+          </div>
           ))}
           {newPost ?
           <NewPost user={user} />
