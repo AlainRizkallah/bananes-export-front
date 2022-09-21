@@ -16,9 +16,10 @@ import Link from 'next/link';
 import * as React from 'react';
 
 const pages = ['posts', 'users'];
-const { theme, resolvedTheme, setTheme } = useTheme();
 
 const ResponsiveAppBar = () => {
+  const { theme, resolvedTheme, setTheme } = useTheme();
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -171,9 +172,10 @@ const ResponsiveAppBar = () => {
             <Typography>
               {user.name} 
             </Typography>
-            <small>
-            ({user.email}) 
-            </small>
+            
+            <Typography fontSize={15}>
+              {""+user.email} 
+            </Typography>
             </Box>
               
                 <MenuItem key={'setting'} onClick={handleCloseUserMenu}>
