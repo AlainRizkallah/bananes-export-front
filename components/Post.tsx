@@ -283,7 +283,7 @@ const Post: React.FC<{ post: PostProps, user: UserProfile | undefined, available
             <div>
               <Box mb={1}>
                 <Typography variant="h6">{post.User_employee ? post.User_employee.name : "Non assigné"}</Typography>
-                {(post.User_employee) ? (post.User_employee.ArrivalAt !== null ? "(Arrive le " + post.User_employee.ArrivalAt.toLocaleString('fr-FR', options) + ')' : '') : ""}
+                {(post.User_employee) ? ((post.User_employee.ArrivalAt !== null) && post.User_employee.ArrivalAt > today ? "(Arrive le " + post.User_employee.ArrivalAt.toLocaleString('fr-FR', options) + ')' : '') : ""}
               </Box>
               <Box display='flex' alignItems={'center'}><MailOutlineIcon />{'. '}{post.User_employee ? post.User_employee.email : "Non assigné"}</Box>
               <Box display='flex' alignItems={'center'}><ComputerIcon />{'. '}{!post.pcType ? "Pas de PC" : post.pcType === "portable" ? "PC portable" : post.pcType === "fixe" ? "PC fixe" : ""}</Box>
