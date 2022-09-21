@@ -212,7 +212,7 @@ const Post: React.FC<{ post: PostProps, user: UserProfile | undefined, available
                     {available_users?.map((user, value) => {
                       if (user.id)
                         return (
-                          <MenuItem value={user.id}>{user.name}</MenuItem>
+                          <MenuItem value={""+user.id}>{user.name}</MenuItem>
                         );
                     })}
 
